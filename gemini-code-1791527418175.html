@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Invoice</title>
+    <style>
+        /* CSS Reset & Basic Styles */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            padding: 40px 20px;
+        }
+
+        /* Invoice Container */
+        .invoice-box {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        /* Header Section */
+        .invoice-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 40px;
+        }
+
+        .company-info h2 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        .company-info p, .invoice-details p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        .invoice-details {
+            text-align: right;
+        }
+
+        .invoice-details h1 {
+            font-size: 28px;
+            color: #2c3e50;
+            margin-bottom: 5px;
+        }
+
+        /* Billing Section */
+        .billing-section {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 40px;
+        }
+
+        .bill-to h3 {
+            font-size: 16px;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .bill-to p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* Table Section */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        th {
+            background-color: #f8f9fa;
+            color: #2c3e50;
+            text-align: left;
+            padding: 12px;
+            font-size: 14px;
+            border-bottom: 2px solid #ddd;
+        }
+
+        td {
+            padding: 12px;
+            font-size: 14px;
+            color: #555;
+            border-bottom: 1px solid #eee;
+        }
+
+        /* Alignments */
+        .text-right {
+            text-align: right;
+        }
+
+        /* Totals Section */
+        .totals-section {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 40px;
+        }
+
+        .totals-table {
+            width: 300px;
+        }
+
+        .totals-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 8px 0;
+            font-size: 14px;
+            color: #666;
+            border-bottom: 1px solid #eee;
+        }
+
+        .totals-row.grand-total {
+            font-weight: bold;
+            color: #2c3e50;
+            font-size: 16px;
+            border-bottom: 2px solid #2c3e50;
+        }
+
+        /* Footer */
+        .invoice-footer {
+            text-align: center;
+            font-size: 13px;
+            color: #888;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="invoice-box">
+        <!-- Header -->
+        <div class="invoice-header">
+            <div class="company-info">
+                <h2>DevStudio Inc.</h2>
+                <p>123 Web Street</p>
+                <p>Code City, CC 90210</p>
+            </div>
+            <div class="invoice-details">
+                <h1>INVOICE</h1>
+                <p><strong>Invoice #:</strong> INV-2026-001</p>
+                <p><strong>Date:</strong> October 9, 2026</p>
+                <p><strong>Due Date:</strong> October 23, 2026</p>
+            </div>
+        </div>
+
+        <!-- Billing Info -->
+        <div class="billing-section">
+            <div class="bill-to">
+                <h3>Billed To:</h3>
+                <p><strong>Acme Corp</strong></p>
+                <p>Attn: John Doe</p>
+                <p>456 Business Rd</p>
+                <p>Enterprise, EN 12345</p>
+            </div>
+        </div>
+
+        <!-- Items Table -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Description</th>
+                    <th class="text-right">Hours</th>
+                    <th class="text-right">Rate</th>
+                    <th class="text-right">Amount</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Landing Page HTML/CSS Layout</td>
+                    <td class="text-right">10</td>
+                    <td class="text-right">$50.00</td>
+                    <td class="text-right">$500.00</td>
+                </tr>
+                <tr>
+                    <td>Responsive Media Queries</td>
+                    <td class="text-right">4</td>
+                    <td class="text-right">$50.00</td>
+                    <td class="text-right">$200.00</td>
+                </tr>
+                <tr>
+                    <td>Bug Fixes & Polish</td>
+                    <td class="text-right">2</td>
+                    <td class="text-right">$50.00</td>
+                    <td class="text-right">$100.00</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Totals -->
+        <div class="totals-section">
+            <div class="totals-table">
+                <div class="totals-row">
+                    <span>Subtotal:</span>
+                    <span>$800.00</span>
+                </div>
+                <div class="totals-row">
+                    <span>Tax (10%):</span>
+                    <span>$80.00</span>
+                </div>
+                <div class="totals-row grand-total">
+                    <span>Total Due:</span>
+                    <span>$880.00</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="invoice-footer">
+            <p>Thank you for your business! Please send payments to billing@devstudio.com</p>
+        </div>
+    </div>
+
+</body>
+</html>
